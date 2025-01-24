@@ -6,9 +6,7 @@ services:
     container_name: pizzashop-pg
     ports:
     - 5433:5432
-    environment:
-    - POSTGRES_USER=albqvxc
-    - POSTGRES_PASSWORD=victor1234
-    - POSTGRES_DB=pizzashop-dev
+    env_file:
+      - .env
 
 #por enquanto subir só o docker, depois coloco um pro node

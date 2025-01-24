@@ -1,7 +1,5 @@
-import { z } from "zod";
+import { cleanEnv, url } from "envalid";
 
-const envSchema = z.object({
-	DATABASE_URL: z.string().url(),
+export const env = cleanEnv(process.env, {
+	DATABASE_URL: url(),
 });
-
-export const env = envSchema.parse(process.env);
