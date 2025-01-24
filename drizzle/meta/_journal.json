@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1737723335088,
+      "tag": "0000_green_weapon_omega",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1737724428588,
+      "tag": "0001_blushing_proemial_gods",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1737724834330,
+      "tag": "0002_cloudy_umar",
+      "breakpoints": true
+    }
+  ]
+}
