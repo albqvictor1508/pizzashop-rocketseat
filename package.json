@@ -11,6 +11,8 @@
 	},
 	"dependencies": {
 		"@biomejs/biome": "^1.9.4",
+		"@elysiajs/cookie": "^0.8.0",
+		"@elysiajs/jwt": "^1.2.0",
 		"@faker-js/faker": "^9.4.0",
 		"@paralleldrive/cuid2": "^2.2.2",
 		"drizzle-orm": "^0.38.4",
