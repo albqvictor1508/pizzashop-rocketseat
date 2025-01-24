@@ -10,13 +10,16 @@
 	},
 	"dependencies": {
 		"@biomejs/biome": "^1.9.4",
+		"@faker-js/faker": "^9.4.0",
 		"@paralleldrive/cuid2": "^2.2.2",
 		"drizzle-orm": "^0.38.4",
 		"elysia": "latest",
-		"postgres": "^3.4.5"
+		"postgres": "^3.4.5",
+		"zod": "^3.24.1"
 	},
 	"devDependencies": {
 		"bun-types": "latest",
+		"chalk": "^5.4.1",
 		"drizzle-kit": "^0.30.2"
 	},
 	"module": "src/index.js"
