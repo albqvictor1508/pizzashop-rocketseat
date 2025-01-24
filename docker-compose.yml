@@ -1,0 +1,14 @@
+name: pizzashop
+
+services:
+  pg:
+    image: bitnami/postgresql:14.15.0
+    container_name: pizzashop-pg
+    ports:
+    - 5433:5432
+    environment:
+    - POSTGRES_USER=albqvxc
+    - POSTGRES_PASSWORD=victor1234
+    - POSTGRES_DB=pizzashop-dev
+
+#por enquanto subir só o docker, depois coloco um pro node
