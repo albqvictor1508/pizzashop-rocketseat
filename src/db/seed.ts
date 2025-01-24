@@ -1,11 +1,11 @@
-import { users } from "./schema/users";
-import { restaurants } from "./schema/restaurants";
+import { users, restaurants, authLinks } from "./schema";
 import { db } from "./connection";
 import { faker } from "@faker-js/faker";
 import chalk from "chalk";
 
 await db.delete(users);
 await db.delete(restaurants);
+await db.delete(authLinks);
 //LIMPAR O BANCO
 
 //criando gerente
