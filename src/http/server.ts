@@ -1,7 +1,6 @@
 import { Elysia, t } from "elysia";
 import { jwt } from "@elysiajs/jwt";
 import { env } from "../env";
-import cookie from "@elysiajs/cookie";
 import { loadRoutes } from "../utils/load-routes";
 
 export const app = new Elysia()
@@ -14,7 +13,11 @@ export const app = new Elysia()
 			}),
 		}),
 	)
-	.use(cookie());
+	.derive(() => {
+		return {
+			name: "xera leite",
+		};
+	});
 await loadRoutes();
 
 app.listen(3333);
