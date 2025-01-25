@@ -3,6 +3,8 @@ import { jwt } from "@elysiajs/jwt";
 import { env } from "../env";
 import { loadRoutes } from "../utils/load-routes";
 
+//Static<typeof jwtPayload> : converter o objeto do tipo TObject(do typebox) pra um objeto TS
+
 export const app = new Elysia()
 	.use(
 		jwt({
@@ -13,9 +15,9 @@ export const app = new Elysia()
 			}),
 		}),
 	)
-	.derive(() => {
+	.derive(({ cookie }) => {
 		return {
-			name: "xera leite",
+			onSign() {},
 		};
 	});
 await loadRoutes();

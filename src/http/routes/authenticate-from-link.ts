@@ -55,6 +55,7 @@ export const route = (elysia: typeof app) => {
 
 			//usuário ja é redirecionado com cookie e JWT dentro
 			redirect(redirectURL);
+			return { token: cookie.pizzashop_auth.value };
 		},
 		{
 			query: t.Object({
