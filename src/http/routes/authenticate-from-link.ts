@@ -7,7 +7,7 @@ import type { app } from "../server";
 export const route = (elysia: typeof app) => {
 	elysia.get(
 		"/auth-links/authenticate",
-		async ({ query }) => {
+		async ({ query, jwt: { sign }, cookie }) => {
 			const { code, redirect } = query;
 
 			const authLinkFromCode = await db.query.authLinks.findFirst({
@@ -36,6 +36,13 @@ export const route = (elysia: typeof app) => {
 					return eq(fields.managerId, authLinkFromCode.userId);
 				},
 			});
+
+			const jwt = await sign({
+				sub: authLinkFromCode.userId,
+				restaurantId: managedRestaurant?.id,
+			});
+
+			//usar a função pra configurar o cookie
 		},
 		{
 			query: t.Object({
