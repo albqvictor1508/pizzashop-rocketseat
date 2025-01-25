@@ -1,11 +1,10 @@
 import { Elysia, t } from "elysia";
-import { registerRestaurant } from "./routes/register-restaurant";
-import { sendAuthLink } from "./routes/send-auth-link";
 import { jwt } from "@elysiajs/jwt";
 import { env } from "../env";
 import cookie from "@elysiajs/cookie";
+import { loadRoutes } from "../utils/load-routes";
 
-const app = new Elysia()
+export const app = new Elysia()
 	.use(
 		jwt({
 			secret: env.JWT_SECRET_KEY,
@@ -15,9 +14,8 @@ const app = new Elysia()
 			}),
 		}),
 	)
-	.use(cookie())
-	.use(registerRestaurant)
-	.use(sendAuthLink);
+	.use(cookie());
+await loadRoutes();
 
 app.listen(3333);
 console.log(
